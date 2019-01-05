@@ -6,3 +6,5 @@ fields:
 - type: textarea
   label: Content
   name: content
+pages:
+- content/about/index.md
