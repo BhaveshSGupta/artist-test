@@ -1,0 +1,8 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+theme = "artist"
+themesDir = "themes"
+title = "Lanjish"
+[params]
+logoUrl = "/images/logo.png"
+logoAlt = "Test test"
