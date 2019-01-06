@@ -4,4 +4,3 @@ date : {{ .Date }}
 draft : false
 type : "detail"  # Do not modify.
 ---
-test
