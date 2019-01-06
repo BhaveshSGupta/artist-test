@@ -1,6 +1,7 @@
 ---
-date: 2015-06-20 14:02:37 +0200
-title: "about"
-type: "detail"
+date: 2015-06-20 12:02:37 +0000
+title: About
+type: detail
+
 ---
 about section content
