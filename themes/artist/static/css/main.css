@@ -1,2 +1,7 @@
-body {background:red;  font-family: 'Lato';}
-header > .container {max-width: 2000px; padding-bottom: 20px; border-bottom: 1px solid #eaeaea;}
+.hide{display: none!important}
+body,html {font-family: "Lato"}
+header{border-bottom: 1px solid #eaeaea;}
+header > .container {max-width: 2000px; padding-bottom: 20px;}
+#navbar{display: inline}
+#navbar ul {list-style: none;margin: 0;display: inline;padding: 0;}
+#navbar ul li {float: left;}
