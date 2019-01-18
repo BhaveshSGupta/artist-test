@@ -2,4 +2,12 @@
 label: Paint
 hide_body: false
 is_partial: false
-fields: []
+fields:
+- type: text
+  name: ''
+- type: text
+  name: title
+  label: title
+  description: Add title here
+  config:
+    required: true
