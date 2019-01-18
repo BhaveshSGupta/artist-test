@@ -3,6 +3,12 @@ label: About
 hide_body: true
 is_partial: false
 fields:
+- type: text
+  name: title
+  label: title
+  description: Add title here
+  config:
+    required: true
 - type: textarea
   name: content
   label: Content
