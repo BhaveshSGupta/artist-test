@@ -1,12 +1,9 @@
 <header>
   <div class="container">
-    <div class="logo hide">
-      {{ .Site.Title }}
-    </div>
     <nav class="navbar" id="navbar-main">
       <a class="navbar-brand" href="{{ "/" | relLangURL }}">
         {{- if .Site.Params.logo -}}
-        <img src="{{ printf .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}">
+        <img class="logo" src="{{ printf .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}">
         {{- else -}}
         {{- .Site.Title -}}
         {{- end -}}
