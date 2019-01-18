@@ -4,4 +4,4 @@ theme = "artist"
 themesDir = "themes"
 title = "Lanjish"
 [params]
-logo = "/images/logo.png"
+logo = "/static/logo.png"
