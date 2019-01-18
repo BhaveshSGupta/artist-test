@@ -2,7 +2,7 @@
 content = ""
 date = "2019-01-18T02:50:25+00:00"
 image = ""
-title = "paintings"
+title = "Paintings"
 [menu.main]
 name = "Paint"
 weight = 3
