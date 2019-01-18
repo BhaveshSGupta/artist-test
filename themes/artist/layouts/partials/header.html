@@ -7,17 +7,14 @@
         {{- else -}}
         {{- .Site.Title -}}
         {{- end -}}
-      </a>
-      <div class="collapse navbar-collapse" id="navbar">
+      </a><div class="collapse navbar-collapse" id="navbar">
         {{ $align_right := .Site.Params.menus.align_right | default true }}
         <ul class="navbar-nav {{ if $align_right }}ml-auto{{ else }}mr-auto{{ end }}">
           {{ range .Site.Menus.main }}
           {{ if .HasChildren }}
           <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
-              {{ .Pre }}
-              <span>{{ .Name | safeHTML }}</span>
-              {{ .Post }}
+              {{ .Pre }}<span>{{ .Name | safeHTML }}</span>{{ .Post }}
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
@@ -41,11 +38,7 @@
           {{ end }}
           <li class="nav-item">
             <a class="nav-link" href="{{ .URL | relLangURL }}" {{ if $.IsHome }} data-target="{{ .URL }}" {{ end }}
-              {{ ($.Scratch.Get "target") | safeHTMLAttr }}>
-              {{ .Pre }}
-              <span>{{ .Name | safeHTML }}</span>
-              {{ .Post }}
-            </a>
+              {{ ($.Scratch.Get "target") | safeHTMLAttr }}>{{ .Pre }}<span>{{ .Name | safeHTML }}</span>{{ .Post }}</a>
           </li>
           {{ end }}
           {{ end }}
