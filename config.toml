@@ -5,6 +5,6 @@ themesDir = "themes"
 title = "Lanjish"
 [[menu.main]]
 name = "Paintings"
-weight = 1
+weight = 3
 [params]
 logo = "/images/logo.png"
