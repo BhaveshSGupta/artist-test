@@ -3,5 +3,8 @@ languageCode = "en-us"
 theme = "artist"
 themesDir = "themes"
 title = "Lanjish"
+[[menu.main]]
+name = "Paintings"
+weight = 3
 [params]
 logo = "/images/logo.png"
