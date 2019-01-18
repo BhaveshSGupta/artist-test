@@ -3,7 +3,7 @@
     <nav class="navbar" id="navbar-main">
       <a class="navbar-brand" href="{{ "/" | relLangURL }}">
         {{- if .Site.Params.logo -}}
-        <img class="logo" src="{{ printf .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}">
+        <img class="logo" id="logo" src="{{ printf .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}">
         {{- else -}}
         {{- .Site.Title -}}
         {{- end -}}
