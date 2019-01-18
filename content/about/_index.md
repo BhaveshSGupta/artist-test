@@ -5,7 +5,7 @@ type: detail
 weight: 2
 menu:
   main:
-    weight: 2
+    weight: 3
 
 ---
 about section content

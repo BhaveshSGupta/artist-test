@@ -4,7 +4,7 @@ title: Home
 weight: 1
 menu:
   main:
-    weight: 1
+    weight: 4
 
 ---
 Home page content
