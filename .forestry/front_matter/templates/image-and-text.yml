@@ -1,8 +1,22 @@
 ---
-label: image and text
+label: About
 hide_body: false
 is_partial: false
-fields: []
+fields:
+- type: textarea
+  name: content
+  label: Content
+  description: Enter Content here
+  config:
+    wysiwyg: true
+    schema:
+      format: markdown
+- type: file
+  name: image
+  label: image
+  description: please upload image here
+  config:
+    maxSize: '5'
 pages:
 - content/about.md
 - content/paint.md
