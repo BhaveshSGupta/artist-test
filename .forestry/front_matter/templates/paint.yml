@@ -9,5 +9,13 @@ fields:
   description: Add title here
   config:
     required: true
+- type: text
+  name: type
+  label: type
+  description: typw
+  hidden: true
+  config:
+    required: true
+  default: painting
 pages:
 - content/paintiings.md
