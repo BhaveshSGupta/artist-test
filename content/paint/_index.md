@@ -5,7 +5,6 @@ image = "/images/SL13.jpg"
 title = "Paint"
 type = "about"
 [menu.main]
-weight = 3
-
+weight = 5
 +++
 Test tesst
