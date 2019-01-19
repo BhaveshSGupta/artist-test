@@ -19,3 +19,4 @@ fields:
   default: painting
 pages:
 - content/paint.md
+- content/paint/here.md
