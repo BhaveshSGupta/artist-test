@@ -34,4 +34,4 @@ fields:
 pages:
 - content/about.md
 - content/about.md
-- content/paint/index.md
+- content/paint/_index.md
