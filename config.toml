@@ -5,3 +5,4 @@ themesDir = "themes"
 title = "Lanjish"
 [params]
 logo = "logo.jpg"
+sectionPagesMenu = "main"
