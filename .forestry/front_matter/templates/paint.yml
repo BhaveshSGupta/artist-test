@@ -18,4 +18,4 @@ fields:
     required: true
   default: painting
 pages:
-- content/Paintings/home.md
+- content/Paintings/_index.md
