@@ -1,75 +1,41 @@
 <header>
-  <div class="container">
-    <nav class="navbar" id="navbar-main">
-      <a class="navbar-brand" href="{{ "/" | relLangURL }}">
-        {{- if .Site.Params.logo -}}
-        <img class="logo" id="logo" src="{{ printf .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}">
-        {{- else -}}
-        {{- .Site.Title -}}
-        {{- end -}}
-      </a><div class="collapse navbar-collapse" id="navbar">
-        {{ $align_right := .Site.Params.menus.align_right | default true }}
-        <ul class="navbar-nav {{ if $align_right }}ml-auto{{ else }}mr-auto{{ end }}">
-          {{ range .Site.Menus.main }}
-          {{ if .HasChildren }}
-          <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
-              {{ .Pre }}<span>{{ .Name | safeHTML }}</span>{{ .Post }}
-              <span class="caret"></span>
+    <div class="container">
+        <nav class="navbar" id="navbar-main">
+            <a class="navbar-brand" href="{{ "/" | relLangURL }}">
+                {{ if .Site.Params.logo }}
+                <img class="logo" id="logo" src="{{ printf .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}">
+                {{ else }}
+                {{ .Site.Title }}
+                {{ end }}
             </a>
-            <ul class="dropdown-menu">
-              {{ range .Children }}
-              <li class="dropdown-item my-0 py-0 mx-0 px-0">
-                <a href="{{ .URL | relLangURL }}" {{ if $.IsHome }} data-target="{{ .URL }}" {{ end }}>
-                  {{ .Pre }}
-                  <span>{{ .Name | safeHTML }}</span>
-                  {{ .Post }}
-                </a>
-              </li>
-              {{ end }}
-            </ul>
-          </li>
-          {{ else }}
-          {{ $.Scratch.Set "target" "" }}
-          {{ if gt (len .URL) 4 }}
-          {{ if eq "http" (slicestr .URL 0 4) }}
-          {{ $.Scratch.Set "target" " target=\"_blank\" rel=\"noopener\"" }}
-          {{ end }}
-          {{ end }}
-          <li class="nav-item">
-            <a class="nav-link" href="{{ .URL | relLangURL }}" {{ if $.IsHome }} data-target="{{ .URL }}" {{ end }}
-              {{ ($.Scratch.Get "target") | safeHTMLAttr }}>{{ .Pre }}<span>{{ .Name | safeHTML }}</span>{{ .Post }}</a>
-          </li>
-          {{ end }}
-          {{ end }}
-          {{ if and (not $align_right) (or .IsTranslated .Site.Menus.main_right) }}
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          {{ end }}
-          {{ range .Site.Menus.main_right }}
-          {{/* Set target for link. */}}
-          {{ $.Scratch.Set "target" "" }}
-          {{ if gt (len .URL) 4 }}
-          {{ if eq "http" (slicestr .URL 0 4) }}
-          {{ $.Scratch.Set "target" " target=\"_blank\" rel=\"noopener\"" }}
-          {{ end }}
-          {{ end }}
-          <li class="nav-item">
-            <a class="nav-link" href="{{ .URL | relLangURL }}" {{ if $.IsHome }} data-target="{{ .URL }}" {{ end }}
-              {{ ($.Scratch.Get "target") | safeHTMLAttr }}>
-              {{ .Pre }}
-              <span>{{ .Name | safeHTML }}</span>
-              {{ .Post }}
-            </a>
-          </li>
-          {{ end }}
-          {{ if .Site.Params.search.engine }}
-          <li class="nav-item">
-            <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
-          </li>
-          {{ end }}
-        </ul>
-      </div>
-    </nav>
-  </div>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav ml-auto">
+                    {{ $currentPage := . }}
+                    {{ range .Site.Menus.main }}
+                    {{ if .HasChildren }}
+                    <li class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
+                        <a href="{{ .URL }}">
+                            <span>{{ .Name }}</span>
+                        </a>
+                        <ul class="sub-menu">
+                            {{ range .Children }}
+                            <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+                                <a href="{{ .URL }}">{{ .Name }}</a>
+                            </li>
+                            {{ end }}
+                        </ul>
+                    </li>
+                    {{ else }}
+                    <li>
+                        <a href="{{ .URL }}">
+                            {{ .Pre }}
+                            <span>{{ .Name }}</span>
+                        </a>
+                    </li>
+                    {{ end }}
+                    {{ end }}
+                </ul>
+        </nav>
+    </div>
+
 </header>

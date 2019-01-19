@@ -6,5 +6,4 @@ title = "Paintings"
 type = "about"
 [menu.main]
 weight = 2
-
 +++

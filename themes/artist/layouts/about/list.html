@@ -1,13 +1,14 @@
 {{ define "main" }}
-    <div class="artist-detail">
-        {{ .Content }}
-        <ul>
-            <!-- Ranges through content/posts/*.md -->
-            {{ range .Pages }}
-                <li>
-                    <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
-                </li>
-            {{ end }}
-            </ul>
-    </div>
+<div class="artist-detail">
+    {{ .Content }}
+    <ul>
+        here
+        <!-- Ranges through content/posts/*.md -->
+        {{ range .Pages }}
+        <li>
+            <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
+        </li>
+        {{ end }}
+    </ul>
+</div>
 {{ end }}
