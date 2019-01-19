@@ -17,5 +17,3 @@ fields:
   config:
     required: true
   default: painting
-pages:
-- content/Paintings/_index.md
