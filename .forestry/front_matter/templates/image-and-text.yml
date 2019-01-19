@@ -33,3 +33,4 @@ fields:
   default: about
 pages:
 - content/about.md
+- content/paintiings.md
