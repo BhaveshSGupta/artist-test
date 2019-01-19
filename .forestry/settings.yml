@@ -10,6 +10,10 @@ sections:
   create: all
   match: "*"
 - type: document
+  path: content/_index.md
+  label: Homepage
+  match: "**/*"
+- type: document
   path: content/about.md
   label: About
 upload_dir: static/images
