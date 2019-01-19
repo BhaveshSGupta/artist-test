@@ -23,5 +23,13 @@ fields:
   description: please upload image here
   config:
     maxSize: '5'
+- type: text
+  name: type
+  label: type
+  description: type
+  hidden: true
+  config:
+    required: true
+  default: about
 pages:
 - content/about.md
