@@ -1,8 +1,10 @@
 {{ define "main" }}
+<div class="grid-container">
     <div class="artist-detail">
         <img src="{{ .Params.image }}"> 
     </div>
     <div class="artist-detail">
         {{ .Params.content }}
     </div>
+</div>
 {{ end }}
