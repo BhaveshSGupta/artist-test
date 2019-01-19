@@ -5,5 +5,6 @@ type = "painting"
 [menu.main]
 name = "Paintints"
 weight = 2
+
 +++
 paint
