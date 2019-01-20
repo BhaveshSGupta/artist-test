@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "https://priceless-goldwasser-b386f7.netlify.com"
 languageCode = "en-us"
 theme = "artist"
 themesDir = "themes"
