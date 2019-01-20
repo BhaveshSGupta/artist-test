@@ -1,41 +1,72 @@
-<header>
+<header id="header" class="header">
     <div class="container">
-        <nav class="navbar" id="navbar-main">
-            <a class="navbar-brand" href="{{ "/" | relLangURL }}">
-                {{ if .Site.Params.logo }}
-                <img class="logo" id="logo" src="{{ printf .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}">
-                {{ else }}
-                {{ .Site.Title }}
-                {{ end }}
-            </a>
-            <div class="collapse navbar-collapse" id="navbar">
-                <ul class="navbar-nav ml-auto">
-                    {{ $currentPage := . }}
-                    {{ range .Site.Menus.main }}
-                    {{ if .HasChildren }}
-                    <li class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
-                        <a href="{{ .URL }}">
-                            <span>{{ .Name }}</span>
-                        </a>
-                        <ul class="sub-menu">
-                            {{ range .Children }}
-                            <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
-                                <a href="{{ .URL }}">{{ .Name }}</a>
-                            </li>
-                            {{ end }}
-                        </ul>
-                    </li>
-                    {{ else }}
-                    <li>
-                        <a href="{{ .URL }}">
-                            {{ .Pre }}
-                            <span>{{ .Name }}</span>
-                        </a>
-                    </li>
-                    {{ end }}
-                    {{ end }}
-                </ul>
-        </nav>
-    </div>
+    <div class="logo-wrapper">
+        <a class="logo" href="{{ "/" | relLangURL }}">
+            {{ if .Site.Params.logo }}
+            <img src="{{ printf .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}">
+            {{ else }}
+            {{ .Site.Title }}
+            {{ end }}
+        </a>
+</div>
 
+<nav class="site-navbar">
+    <ul id="menu" class="menu">
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
+          <li class="menu-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}">
+          {{ if .HasChildren }}
+            <!-- drop down navigation MENU -->
+            <a class="menu-item-link menu-parent" href="{{ .URL | absLangURL | safeURL }}">{{ .Name }}</a>
+            <ul class="submenu">
+              {{ range .Children }}
+                <li>
+                  <a href="{{ .URL | absLangURL | safeURL }}">{{ .Name }}</a>
+                </li>
+              {{ end }}
+            </ul>
+
+          {{ else }}
+            <!-- normal MENU -->
+            {{ if hasPrefix .URL "http" }}
+              <a class="menu-item-link" href="{{ .URL | absLangURL | safeURL }}" rel="noopener" target="_blank">
+                {{ .Name }}
+                {{/* icon new window */}}
+                <i class="iconfont">
+                  {{ partial "svg/new_window.svg" }}
+                </i>
+              </a>
+            {{ else }}
+              <a class="menu-item-link" href="{{ .URL | absLangURL | safeURL }}">{{ .Name }}</a>
+            {{ end }}
+
+          {{ end  }}
+
+        </li>
+      {{ end }}
+      {{ if and (gt (len .Site.Home.AllTranslations) 1) (.Site.Params.showMenuLanguageChooser | default false ) }}
+        {{- $.Scratch.Set "language" .Language -}}
+        <li class="menu-item">
+          <!-- drop down navigation MENU -->
+          <a class="menu-item-link menu-parent menu-item-lang" href="#">
+            {{/* icon globe */}}
+            <i class="iconfont">
+              {{ partial "svg/globe.svg" }}
+            </i>
+            {{ .Site.Language.LanguageName }}
+          </a>
+          <ul class="submenu">
+            {{ range .Site.Home.AllTranslations }}
+              {{ if ne ($.Scratch.Get "language") .Language }}
+                <li>
+                  <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+                </li>
+              {{ end }}
+            {{ end }}
+          </ul>
+        </li>
+      {{ end }}
+    </ul>
+  </nav>
+</div>
 </header>
