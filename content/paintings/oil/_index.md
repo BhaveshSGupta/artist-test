@@ -1,11 +1,8 @@
 +++
-
 content = ""
-date = "2019-01-19T05:35:19+00:00"
+date = "2019-01-20T06:17:53+00:00"
 image = ""
-title = "oil"
+title = "_index"
 type = "about"
-[menu.main]
-weight = 3
-parent= "Paintings"
+
 +++
