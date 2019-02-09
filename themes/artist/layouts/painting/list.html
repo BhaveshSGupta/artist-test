@@ -1,6 +1,9 @@
 {{ define "main" }}
     <div class="artist-detail">
-        artist artist-detail div here painitngs
-        {{ .Content }}
+            {{ range .Pages }}
+            <li>
+                <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
+            </li>
+        {{ end }}
     </div>
 {{ end }}
