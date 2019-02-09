@@ -1,8 +1,11 @@
 {{ define "main" }}
+<h1>{{.Title}}</h1>
     <div class="artist-detail">
             {{ range .Pages.ByTitle }}
             <a href="{{ .Permalink }}">
-                    <img src="{{ .Params.images }}"> 
+                <span style="width:calc(25% - 20px);margin:10px;display:block;float:left">
+                    <img src="{{ .Params.images }}" style="max-width:100%"> 
+                </span>
             </a>
         {{ end }}
     </div>

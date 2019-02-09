@@ -1,12 +1,10 @@
 +++
 
-content = ""
 date = "2019-01-19T05:35:19+00:00"
 image = ""
-title = "pastel"
-type = "about"
+title = "Brown Pencil"
+type = "painting"
 [menu.main]
-weight = 3
+weight = 2
 parent= "Paintings"
-
 +++

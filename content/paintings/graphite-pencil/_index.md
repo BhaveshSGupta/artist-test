@@ -5,6 +5,6 @@ image = ""
 title = "Graphite Pencil"
 type = "painting"
 [menu.main]
-weight = 3
+weight = 1
 parent= "Paintings"
 +++
