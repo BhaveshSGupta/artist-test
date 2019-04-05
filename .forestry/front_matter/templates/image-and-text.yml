@@ -1,7 +1,6 @@
 ---
 label: About
 hide_body: true
-is_partial: false
 fields:
 - type: text
   name: title
@@ -32,5 +31,4 @@ fields:
     required: true
   default: about
 pages:
-- content/about.md
 - content/about.md
