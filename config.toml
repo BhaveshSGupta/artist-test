@@ -3,6 +3,25 @@ languageCode = "en-us"
 theme = "artist"
 themesDir = "themes"
 title = "Lanjish"
+[[menu.main]]
+name = "pencil"
+parent = "Paintings"
+weight = 1
+[[menu.main]]
+name = "potraits"
+parent = "Paintings"
+weight = 2
+[[menu.main]]
+name = "Brown Pencil"
+parent = "Paintings"
+weight = 4
+[[menu.main]]
+name = "Graphite Pencil"
+parent = "Paintings"
+weight = 3
+[[menu.main]]
+name = "Paintings"
+weight = 3
 [params]
 logo = "logo.jpg"
 sectionPagesMenu = "main"
